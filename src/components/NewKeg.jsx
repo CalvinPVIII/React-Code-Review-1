@@ -5,19 +5,38 @@ import { Router } from 'react-router-dom';
 
 function NewKeg(props){
 
+const form = {
+  marginTop: '30px',
+  display: 'flex',
+  flexFlow: 'row wrap',
+  justifyContent: 'center',
+  marginLeft: '-30px',
+}
+const menu = {
+  textAlign: "center",
+  color: "black",
+}
+const label = {
+  padding: '10px'
+}
   return (
     <div>
-    <form action="/">
-      <label for="name">Name:</label><br>
-      <input type="text"name="name"><br>
-      <label for="brand">Brand:</label><br>
-      <input type="text" name="brand"><br>
-      <label for="price">Price:</label><br>
-      <input type="number" name="price"><br>
-      <label for="alcoholContent">Alcohol Percentage:</label><br>
-      <input type="number" name="alcoholContent"><br>
-      <input type="submit" value="Submit">
-    </form>
+      <h1 style={menu}> Tap Keg </h1>
+    <form style={form}>
+    <label style={label}> Name:
+      <input type="text" name="name" />
+    </label>
+    <label style={label}> Brand:
+      <input type="text" name="brand" />
+    </label>
+    <label style={label}> Cost:
+      <input type="number" name="cost" />
+    </label>
+    <label style={label}> Alcohol Percentage:
+      <input type="numder" name="alcoholContent" />
+    </label>
+    <input type="submit" value="Submit" />
+  </form>
     </div>
   );
 }

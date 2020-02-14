@@ -31,7 +31,7 @@ const actionLinks ={
       <h3>{props.alcoholContent}% Alcohol</h3>
       <h3>{props.pintsLeft} Pints Left</h3>
       <div style={actions}>
-        <h4 style={actionLinks}> Edit </h4>
+        <Link to ='/editkeg'><h4 style={actionLinks}> Edit </h4></Link>
         <h4 style={actionLinks}> Pour </h4>
       </div>
     </div>

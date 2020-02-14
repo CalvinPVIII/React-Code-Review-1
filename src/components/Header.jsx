@@ -95,9 +95,12 @@ const navbarLeft = {
           <Link to='/'><h3 style={validationLinks}> Sign Up </h3></Link>
         </div>
         <div style={navbarLeft}>
-          <h3> Tap Keg </h3>
+          <Link to ="/newkeg"><h3> Tap Keg </h3></Link>
         </div>
         <style jsx>{`
+          a{
+            color:black
+          }
           a:visited {
             color:black
           }
