@@ -9,11 +9,6 @@ function App() {
     <div >
     <Header/>
     <KegList/>
-    <style jsx>{`
-      body{
-        background-color: #2b1e18
-      }
-      `}</style>
     </div>
   );
 }

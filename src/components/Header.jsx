@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Router } from 'react-router-dom';
-
+import logo from '../images/logo.png'
 
 function Header(){
 
@@ -37,7 +37,10 @@ function Header(){
 
   }
 
-
+const logo = {
+  textAlign: 'center',
+  fontSize: '50px'
+}
 
 
 
@@ -45,21 +48,22 @@ function Header(){
 
 
   return (
-        <div style={navbar}>
-            <Link to='/'><h3 style={title}> The Tap Room </h3></Link>
-            <div style={navbarleft}>
-            <Link to='/'><h3 style={validationLinks}> Sign In </h3></Link>
-            <Link to='/'><h3 style={validationLinks}> Sign Up </h3></Link>
-            </div>
-            <style jsx>{`
-              a:visited {
-                color:white
-              }
-            `}</style>
-            <div >
-            </div>
-
+    <div>
+      <h1 style={logo}> The Tap Room </h1>
+      <img src={logo}/> 
+      <div style={navbar}>
+        <Link to='/'><h3 style={title}> The Tap Room </h3></Link>
+        <div style={navbarleft}>
+          <Link to='/'><h3 style={validationLinks}> Sign In </h3></Link>
+          <Link to='/'><h3 style={validationLinks}> Sign Up </h3></Link>
         </div>
+        <style jsx>{`
+          a:visited {
+            color:white
+          }
+        `}</style>
+      </div>
+    </div>
     );
   }
 

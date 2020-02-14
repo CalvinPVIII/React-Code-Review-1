@@ -5,14 +5,14 @@ import { Router } from 'react-router-dom';
 
 function Keg(props){
 const kegCard ={
-  backgroundColor: '#a6662c',
+
   width: '300px',
   marginLeft: "auto",
   marginRight: 'auto',
   textAlign: "center",
   padding: '20px',
-  borderRadius: '10px',
-  border: '1px solid #D4AF37'
+
+  marginTop: '10px'
 }
   return (
     <div style={kegCard}>

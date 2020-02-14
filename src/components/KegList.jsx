@@ -43,7 +43,8 @@ function KegList(){
   ]
   const kegList = {
     display: "flex",
-    flexFlow: 'row wrap'
+    flexFlow: 'column wrap',
+    justifyContent: 'space between'
   }
   const menu = {
     textAlign: "center",
@@ -59,7 +60,8 @@ function KegList(){
             brand={keg.brand}
             price={keg.price}
             alcoholContent={keg.alcoholContent}
-            pintsLeft={keg.pintsLeft}/>
+            pintsLeft={keg.pintsLeft}
+            key={index}/>
         )}
       </div>
 
