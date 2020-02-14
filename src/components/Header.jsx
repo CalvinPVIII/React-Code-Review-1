@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import { Router } from 'react-router-dom';
-import logo from '../images/logo.png'
+import logopic from '../images/logo.png'
 
 function Header(){
 
@@ -10,38 +10,63 @@ function Header(){
     marginRight: "auto",
     padding: "5px",
     textAlign: "center",
+    paddingbottom: "20px",
+    marginTop: '8px',
   }
 
   const navbar = {
-
-    backgroundColor: 'rgba(0, 0, 0, 0.5)',
     width: "100vw",
     height: "52px",
-    color: "white",
-    marginLeft: "-8px",
-    marginTop: '-20px',
-    paddingLeft: '10px',
+    color: "black",
     fontWeight: "400",
+    borderTop: '1px solid rgba(0,0,0,0.5)',
+    borderBottom: '1px solid rgba(0,0,0,0.5)',
+    marginTop: "2%",
+    width: "80vw",
+    marginLeft: 'auto',
+    marginRight: 'auto',
+
   }
 
-  const navbarleft = {
+  const navbarright = {
     display: "flex",
     flexFlow: "row wrap",
-    marginLeft: "90%"
+    justifyContent: 'flex-end',
+    marginRight: '40px',
+    marginTop: '30px',
 
   }
 
   const validationLinks = {
-    padding: "10px",
-    marginTop: '-60px'
+
+    marginTop: '-60px',
+    paddingLeft: '10px',
 
   }
 
-const logo = {
+const logotext = {
   textAlign: 'center',
   fontSize: '50px'
 }
 
+const logo = {
+  display: 'flex',
+  flexFlow: "row wrap",
+  justifyContent: 'center',
+  border: "1px solid black",
+  borderRadius: '50px',
+  marginLeft: 'auto',
+  marginRight: 'auto',
+  width: '25%',
+  paddingLeft: '25px'
+}
+
+const logoimg = {
+  width: '100px',
+  height: '100px',
+  marginTop: '15px'
+
+}
 
 
 
@@ -49,17 +74,19 @@ const logo = {
 
   return (
     <div>
-      <h1 style={logo}> The Tap Room </h1>
-      <img src={logo}/> 
+    <div style={logo}>
+      <h1 style={logotext}> The Tap Room </h1>
+      <img style={logoimg} src={logopic}/>
+      </div>
       <div style={navbar}>
-        <Link to='/'><h3 style={title}> The Tap Room </h3></Link>
-        <div style={navbarleft}>
+        <Link to='/'><h3 style={title}> Keg List  </h3></Link>
+        <div style={navbarright}>
           <Link to='/'><h3 style={validationLinks}> Sign In </h3></Link>
           <Link to='/'><h3 style={validationLinks}> Sign Up </h3></Link>
         </div>
         <style jsx>{`
           a:visited {
-            color:white
+            color:black
           }
         `}</style>
       </div>
