@@ -48,11 +48,11 @@ function KegList(){
   }
   const menu = {
     textAlign: "center",
-    color: "white",
+    color: "black",
   }
   return (
     <div>
-      <h1 style={menu}>Menu</h1>
+      <h1 style={menu}>Keg List</h1>
       <div style={kegList}>
         {kegs.map((keg, index)=>
           <Keg

@@ -11,8 +11,17 @@ const kegCard ={
   marginRight: 'auto',
   textAlign: "center",
   padding: '20px',
-
   marginTop: '10px'
+}
+
+const actions ={
+  display: "flex",
+  flexFlow: 'row wrap',
+  justifyContent: 'center',
+}
+
+const actionLinks ={
+  padding: '5px',
 }
   return (
     <div style={kegCard}>
@@ -21,6 +30,10 @@ const kegCard ={
       <h3>${props.price}</h3>
       <h3>{props.alcoholContent}% Alcohol</h3>
       <h3>{props.pintsLeft} Pints Left</h3>
+      <div style={actions}>
+        <h4 style={actionLinks}> Edit </h4>
+        <h4 style={actionLinks}> Pour </h4>
+      </div>
     </div>
   );
 }

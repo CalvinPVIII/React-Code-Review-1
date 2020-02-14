@@ -28,12 +28,13 @@ function Header(){
 
   }
 
-  const navbarright = {
+  const navbarRight = {
     display: "flex",
     flexFlow: "row wrap",
     justifyContent: 'flex-end',
     marginRight: '40px',
     marginTop: '30px',
+    paddingRight: '20%',
 
   }
 
@@ -53,8 +54,7 @@ const logo = {
   display: 'flex',
   flexFlow: "row wrap",
   justifyContent: 'center',
-  border: "1px solid black",
-  borderRadius: '50px',
+  borderBottom: "4px double black",
   marginLeft: 'auto',
   marginRight: 'auto',
   width: '25%',
@@ -64,8 +64,18 @@ const logo = {
 const logoimg = {
   width: '100px',
   height: '100px',
-  marginTop: '15px'
+  marginTop: '15px',
+  marginLeft: '20px',
 
+}
+
+const navbarLeft = {
+  display: "flex",
+  flexFlow: "row wrap",
+  justifyContent: 'flex-start',
+  marginRight: '40px',
+  marginTop: '-80px',
+  paddingLeft: '25%',
 }
 
 
@@ -80,9 +90,12 @@ const logoimg = {
       </div>
       <div style={navbar}>
         <Link to='/'><h3 style={title}> Keg List  </h3></Link>
-        <div style={navbarright}>
+        <div style={navbarRight}>
           <Link to='/'><h3 style={validationLinks}> Sign In </h3></Link>
           <Link to='/'><h3 style={validationLinks}> Sign Up </h3></Link>
+        </div>
+        <div style={navbarLeft}>
+          <h3> Tap Keg </h3>
         </div>
         <style jsx>{`
           a:visited {
