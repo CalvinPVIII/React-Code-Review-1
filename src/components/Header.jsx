@@ -24,6 +24,19 @@ function Header(){
     fontWeight: "400",
   }
 
+  const navbarleft = {
+    display: "flex",
+    flexFlow: "row wrap",
+    marginLeft: "90%"
+
+  }
+
+  const validationLinks = {
+    padding: "10px",
+    marginTop: '-60px'
+
+  }
+
 
 
 
@@ -34,6 +47,10 @@ function Header(){
   return (
         <div style={navbar}>
             <Link to='/'><h3 style={title}> The Tap Room </h3></Link>
+            <div style={navbarleft}>
+            <Link to='/'><h3 style={validationLinks}> Sign In </h3></Link>
+            <Link to='/'><h3 style={validationLinks}> Sign Up </h3></Link>
+            </div>
             <style jsx>{`
               a:visited {
                 color:white
