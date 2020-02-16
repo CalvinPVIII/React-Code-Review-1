@@ -25,6 +25,7 @@ function Header(){
     width: "80vw",
     marginLeft: 'auto',
     marginRight: 'auto',
+    fontFamily: "'Poppins', sans-serif",
 
   }
 
@@ -58,7 +59,8 @@ const logo = {
   marginLeft: 'auto',
   marginRight: 'auto',
   width: '25%',
-  paddingLeft: '25px'
+  paddingLeft: '25px',
+  fontFamily: "'Poppins', sans-serif",
 }
 
 const logoimg = {

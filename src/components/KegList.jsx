@@ -51,7 +51,7 @@ function KegList(){
     color: "black",
   }
   return (
-    <div>
+    <div className='kegPage'>
       <h1 style={menu}>Keg List</h1>
       <div style={kegList}>
         {kegs.map((keg, index)=>
@@ -65,6 +65,21 @@ function KegList(){
         )}
       </div>
 
+      <style jsx>{`
+          .kegPage{
+            animation: fade-in 1s, slide-down 2s;
+            font-family: 'Montserrat', sans-serif;
+          }
+          @keyframes slide-down {
+            0% { margin-top: -1000px }
+            100% { marign-top: 0px }
+          }
+
+          @keyframes fade-in {
+            0% { opacity: 0 }
+            100% { opacity: 1}
+          }
+          `}</style>
     </div>
   );
 }
