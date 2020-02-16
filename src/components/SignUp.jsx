@@ -15,6 +15,7 @@ const form = {
 const menu = {
   textAlign: "center",
   color: "black",
+  fontFamily: "'Montserrat', sans-serif",
 }
 const label = {
   padding: '10px'
@@ -22,18 +23,18 @@ const label = {
   return (
     <div>
       <h1 style={menu}> Create Account </h1>
-    <form style={form}>
-    <label style={label}> Email:
-      <input type="text" name="email" />
-    </label>
-    <label style={label}> Password:
-      <input type="text" name="password" />
-    </label>
-    <label style={label}> Confirm Password:
-      <input type="text" name="confirmPassword" />
-    </label>
-    <input type="submit" value="Submit" />
-  </form>
+      <form style={form}>
+        <label style={label}> Email:
+          <input type="text" name="email" />
+        </label>
+        <label style={label}> Password:
+          <input type="text" name="password" />
+        </label>
+        <label style={label}> Confirm Password:
+          <input type="text" name="confirmPassword" />
+        </label>
+        <input type="submit" value="Submit" />
+      </form>
     </div>
   );
 }

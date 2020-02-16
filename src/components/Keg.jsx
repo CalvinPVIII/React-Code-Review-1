@@ -4,25 +4,25 @@ import { Router } from 'react-router-dom';
 
 
 function Keg(props){
-const kegCard ={
+  const kegCard ={
 
-  width: '300px',
-  marginLeft: "auto",
-  marginRight: 'auto',
-  textAlign: "center",
-  padding: '20px',
-  marginTop: '10px'
-}
+    width: '300px',
+    marginLeft: "auto",
+    marginRight: 'auto',
+    textAlign: "center",
+    padding: '20px',
+    marginTop: '10px'
+  }
 
-const actions ={
-  display: "flex",
-  flexFlow: 'row wrap',
-  justifyContent: 'center',
-}
+  const actions ={
+    display: "flex",
+    flexFlow: 'row wrap',
+    justifyContent: 'center',
+  }
 
-const actionLinks ={
-  padding: '5px',
-}
+  const actionLinks ={
+    padding: '5px',
+  }
   return (
     <div style={kegCard}>
       <h2>{props.name}</h2>

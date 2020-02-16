@@ -48,7 +48,8 @@ function Header(){
 
 const logotext = {
   textAlign: 'center',
-  fontSize: '50px'
+  fontSize: '50px',
+  fontFamily: "'Poppins', sans-serif",
 }
 
 const logo = {
@@ -60,7 +61,7 @@ const logo = {
   marginRight: 'auto',
   width: '25%',
   paddingLeft: '25px',
-  fontFamily: "'Poppins', sans-serif",
+
 }
 
 const logoimg = {
@@ -86,28 +87,28 @@ const navbarLeft = {
 
   return (
     <div>
-    <div style={logo}>
-      <h1 style={logotext}> The Tap Room </h1>
-      <img style={logoimg} src={logopic}/>
-      </div>
-      <div style={navbar}>
-        <Link to='/'><h3 style={title}> Keg List  </h3></Link>
-        <div style={navbarRight}>
-          <Link to='/signin'><h3 style={validationLinks}> Sign In </h3></Link>
-          <Link to='/signup'><h3 style={validationLinks}> Sign Up </h3></Link>
+      <div style={logo}>
+        <h1 style={logotext}> The Tap Room </h1>
+        <img style={logoimg} src={logopic}/>
         </div>
-        <div style={navbarLeft}>
-          <Link to ="/newkeg"><h3> Tap Keg </h3></Link>
+        <div style={navbar}>
+          <Link to='/'><h3 style={title}> Keg List  </h3></Link>
+          <div style={navbarRight}>
+            <Link to='/signin'><h3 style={validationLinks}> Sign In </h3></Link>
+            <Link to='/signup'><h3 style={validationLinks}> Sign Up </h3></Link>
+          </div>
+          <div style={navbarLeft}>
+            <Link to ="/newkeg"><h3> Tap Keg </h3></Link>
+          </div>
+          <style jsx>{`
+            a{
+              color:black
+            }
+            a:visited {
+              color:black
+            }
+          `}</style>
         </div>
-        <style jsx>{`
-          a{
-            color:black
-          }
-          a:visited {
-            color:black
-          }
-        `}</style>
-      </div>
     </div>
     );
   }

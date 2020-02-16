@@ -7,17 +7,19 @@ import NewKeg from './NewKeg';
 import EditKeg from './EditKeg';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
+import Error from './Error'
 function App() {
   return (
     <div>
-    <Header/>
-    <Switch>
-    <Route exact path='/' component={KegList}/>
-    <Route path='/newkeg' component={NewKeg}/>
-    <Route path='/editkeg' component={EditKeg}/>
-    <Route path='/signin' component={SignIn}/>
-    <Route path='/signup' component={SignUp}/>
-    </Switch>
+      <Header/>
+      <Switch>
+        <Route exact path='/' component={KegList}/>
+        <Route path='/newkeg' component={NewKeg}/>
+        <Route path='/editkeg' component={EditKeg}/>
+        <Route path='/signin' component={SignIn}/>
+        <Route path='/signup' component={SignUp}/>
+        <Route component={Error}/>
+      </Switch>
     </div>
   );
 }
