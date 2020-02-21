@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Router } from 'react-router-dom';
 
@@ -42,8 +42,8 @@ function Keg(props){
   const innerKegLevelBar ={
 
     height: '10px',
-    width: `${props.pintsLeft}px`,
-    backgroundColor: 'red',
+    width: `${props.pintsLeft[0]}px`,
+    backgroundColor: `${props.pintsLeft[1]}`,
   }
 
   return (
@@ -52,7 +52,7 @@ function Keg(props){
       <h3>{props.brand}</h3>
       <h3>${props.cost}</h3>
       <h3>{props.alcoholContent}% Alcohol</h3>
-      <h3>{props.pintsLeft} Pints Left</h3>
+      <h3>{props.pintsLeft[0]} Pints Left</h3>
       <div style={outerKegLevelBar}>
         <div style={innerKegLevelBar}>
         </div>

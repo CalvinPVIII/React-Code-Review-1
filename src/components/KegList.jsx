@@ -13,7 +13,6 @@ function KegList(props){
     textAlign: "center",
     color: "black",
   }
-  console.log(props.kegList)
   return (
     <div className='kegPage'>
       <h1 style={menu}>Keg List</h1>

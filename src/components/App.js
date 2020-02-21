@@ -12,7 +12,9 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: []
+      masterKegList: [
+        {name: 'beer', brand: 'some beer', cost: '1', alcoholContent: '2', pintsLeft: [65, 'green'], id: 0}
+      ]
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this)
     this.handleDecreasingPints = this.handleDecreasingPints.bind(this)
@@ -28,8 +30,14 @@ handleDecreasingPints(kegId){
   let newKegList = this.state.masterKegList.slice();
   newKegList.forEach((keg) => {
     if (keg.id === kegId){
-      keg.pintsLeft --
-
+      keg.pintsLeft[0] --
+      if (  keg.pintsLeft[0] <= 64 && keg.pintsLeft[0] > 32 ) {
+        keg.pintsLeft[1] = 'yellow'
+      }else if (keg.pintsLeft[0] <= 32) {
+        keg.pintsLeft[1] = 'red'
+      }else {
+        keg.pintsLeft[1] = 'green'
+      }
     }
     this.setState({masterKegList: newKegList})
   });
