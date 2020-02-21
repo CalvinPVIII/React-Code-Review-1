@@ -46,17 +46,25 @@ function Keg(props){
     backgroundColor: `${props.pintsLeft[1]}`,
   }
 
-  return (
-    <div style={kegCard}>
-      <h2>{props.name}</h2>
-      <h3>{props.brand}</h3>
-      <h3>${props.cost}</h3>
-      <h3>{props.alcoholContent}% Alcohol</h3>
-      <h3>{props.pintsLeft[0]} Pints Left</h3>
-      <div style={outerKegLevelBar}>
-        <div style={innerKegLevelBar}>
-        </div>
+  const kegInfo =
+  <div style={kegCard}>
+    <h2>{props.name}</h2>
+    <h3>{props.brand}</h3>
+    <h3>${props.cost}</h3>
+    <h3>{props.alcoholContent}% Alcohol</h3>
+    <h3>{props.pintsLeft[0]} Pints Left</h3>
+    <div style={outerKegLevelBar}>
+      <div style={innerKegLevelBar}>
       </div>
+    </div>
+
+  </div>;
+
+if (props.currentPath === '/admin') {
+
+  return (
+    <div>
+      {kegInfo}
       <div style={actions}>
         <Link to ='/editkeg'><h4 style={actionLinks}> Edit </h4></Link>
         <h4 className='pourButton' onClick={()=> {props.onPourClick(props.id)}}style={actionLinks}> Pour </h4>
@@ -69,6 +77,13 @@ function Keg(props){
       </style>
     </div>
   );
+}else {
+  return(
+    <div>
+      {kegInfo}
+    </div>
+  )
+}
 }
 
 export default Keg;

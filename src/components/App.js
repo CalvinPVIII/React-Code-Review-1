@@ -8,6 +8,8 @@ import EditKeg from './EditKeg';
 import Admin from './Admin';
 import SignUp from './SignUp';
 import Error from './Error'
+import './App.css';
+
 class App extends React.Component {
   constructor(props) {
     super(props);
@@ -54,7 +56,7 @@ handleDecreasingPints(kegId){
         <Route exact path='/' render={()=> <KegList kegList={this.state.masterKegList} onPourClick={this.handleDecreasingPints}/>}/>
         <Route path='/newkeg' render={()=><NewKeg onKegCreation={this.handleAddingNewKegToList} kegList={this.state.masterKegList} />}/>
         <Route path='/editkeg' component={EditKeg}/>
-        <Route path='/admin' render={()=> <Admin kegList={this.state.masterKegList}/>}/>
+        <Route path='/admin' render={(props)=> <Admin kegList={this.state.masterKegList} currentPath={props.location.pathname}/>}/>
 
         <Route component={Error}/>
       </Switch>

@@ -8,8 +8,10 @@ function Admin(props){
 
   return (
     <div>
+    <h1>Admin</h1>
       <KegList
-      kegList ={props.kegList}/>
+      kegList ={props.kegList}
+      currentPath ={props.currentPath}/>
     </div>
   );
 }

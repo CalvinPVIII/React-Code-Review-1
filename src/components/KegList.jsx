@@ -13,6 +13,8 @@ function KegList(props){
     textAlign: "center",
     color: "black",
   }
+
+
   return (
     <div className='kegPage'>
       <h1 style={menu}>Keg List</h1>
@@ -26,6 +28,7 @@ function KegList(props){
             pintsLeft={keg.pintsLeft}
             id={keg.id}
             onPourClick={props.onPourClick}
+            currentPath={props.currentPath}
             key={index}/>
         )}
       </div>
