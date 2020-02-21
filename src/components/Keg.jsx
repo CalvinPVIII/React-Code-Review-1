@@ -32,7 +32,7 @@ function Keg(props){
       <h3>{props.pintsLeft} Pints Left</h3>
       <div style={actions}>
         <Link to ='/editkeg'><h4 style={actionLinks}> Edit </h4></Link>
-        <h4 style={actionLinks}> Pour </h4>
+        <h4 onClick={()=> {props.onPourClick(props.id)}}style={actionLinks}> Pour </h4>
       </div>
     </div>
   );

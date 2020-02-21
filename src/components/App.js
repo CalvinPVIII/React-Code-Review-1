@@ -15,6 +15,7 @@ class App extends React.Component {
       masterKegList: []
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this)
+    this.handleDecreasingPints = this.handleDecreasingPints.bind(this)
   }
 
 handleAddingNewKegToList(keg){
@@ -23,14 +24,27 @@ handleAddingNewKegToList(keg){
   this.setState({masterKegList: newKegList})
 }
 
+handleDecreasingPints(kegId){
+  let newKegList = this.state.masterKegList.slice();
+  newKegList.forEach((keg) => {
+    if (keg.id === kegId){
+      keg.pintsLeft --
+
+    }
+    this.setState({masterKegList: newKegList})
+  });
+
+
+}
+
   render(){
 
   return (
     <div>
       <Header/>
       <Switch>
-        <Route exact path='/' render={()=> <KegList kegList={this.state.masterKegList}/>}/>
-        <Route path='/newkeg' render={()=><NewKeg onKegCreation={this.handleAddingNewKegToList} />}/>
+        <Route exact path='/' render={()=> <KegList kegList={this.state.masterKegList} onPourClick={this.handleDecreasingPints}/>}/>
+        <Route path='/newkeg' render={()=><NewKeg onKegCreation={this.handleAddingNewKegToList} kegList={this.state.masterKegList} />}/>
         <Route path='/editkeg' component={EditKeg}/>
         <Route path='/admin' render={()=> <Admin kegList={this.state.masterKegList}/>}/>
 

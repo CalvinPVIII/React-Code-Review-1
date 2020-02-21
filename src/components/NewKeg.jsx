@@ -13,7 +13,7 @@ console.log(props);
 
 function handleNewKegSubmit(event){
   event.preventDefault();
-  props.onKegCreation({name: _name.vale, brand: _brand.value, cost: _cost.value, alcoholContent: _alcoholContent.value, pintsLeft: 124})
+  props.onKegCreation({name: _name.vale, brand: _brand.value, cost: _cost.value, alcoholContent: _alcoholContent.value, pintsLeft: 124, id: props.kegList.length})
  _name = "";
  _brand = "";
  _cost = "";
