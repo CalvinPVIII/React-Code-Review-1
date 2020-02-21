@@ -5,7 +5,7 @@ import Header from './Header'
 import KegList from './KegList'
 import NewKeg from './NewKeg';
 import EditKeg from './EditKeg';
-import SignIn from './SignIn';
+import Admin from './Admin';
 import SignUp from './SignUp';
 import Error from './Error'
 class App extends React.Component {
@@ -32,8 +32,8 @@ handleAddingNewKegToList(keg){
         <Route exact path='/' render={()=> <KegList kegList={this.state.masterKegList}/>}/>
         <Route path='/newkeg' render={()=><NewKeg onKegCreation={this.handleAddingNewKegToList} />}/>
         <Route path='/editkeg' component={EditKeg}/>
-        <Route path='/signin' component={SignIn}/>
-        <Route path='/signup' component={SignUp}/>
+        <Route path='/admin' render={()=> <Admin kegList={this.state.masterKegList}/>}/>
+
         <Route component={Error}/>
       </Switch>
     </div>

@@ -94,8 +94,8 @@ const navbarLeft = {
         <div style={navbar}>
           <Link to='/'><h3 style={title}> Keg List  </h3></Link>
           <div style={navbarRight}>
-            <Link to='/signin'><h3 style={validationLinks}> Sign In </h3></Link>
-            <Link to='/signup'><h3 style={validationLinks}> Sign Up </h3></Link>
+            <Link to='/admin'><h3 style={validationLinks}> Admin </h3></Link>
+
           </div>
           <div style={navbarLeft}>
             <Link to ="/newkeg"><h3> Tap Keg </h3></Link>
