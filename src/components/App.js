@@ -43,9 +43,18 @@ handleDecreasingPints(kegId){
     }
     this.setState({masterKegList: newKegList})
   });
-
-
 }
+
+handleUpdatingKeg(updatedKeg){
+  let updatedKegList = this.state.masterKegList.slice();
+  updatedKegList.forEach((keg) => {
+    if (updatedKeg.id === keg.id){
+      keg = updatedKeg
+    }
+    this.setState({masterKegList: updatedKegList})
+  });
+}
+
 
   render(){
 
@@ -55,8 +64,8 @@ handleDecreasingPints(kegId){
       <Switch>
         <Route exact path='/' render={()=> <KegList kegList={this.state.masterKegList} onPourClick={this.handleDecreasingPints}/>}/>
         <Route path='/newkeg' render={()=><NewKeg onKegCreation={this.handleAddingNewKegToList} kegList={this.state.masterKegList} />}/>
-        <Route path='/editkeg' component={EditKeg}/>
-        <Route path='/admin' render={(props)=> <Admin kegList={this.state.masterKegList} currentPath={props.location.pathname}/>}/>
+        <Route path='/editkeg' render={()=><EditKeg onKegUpdate={this.handleUpdatingKeg} kegList={this.state.masterKegList} />}/>
+        <Route path='/admin' render={(props)=> <Admin kegList={this.state.masterKegList} currentPath={props.location.pathname} onPourClick={this.handleDecreasingPints}/>}/>
 
         <Route component={Error}/>
       </Switch>
