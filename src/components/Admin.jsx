@@ -12,7 +12,8 @@ function Admin(props){
       <KegList
       kegList ={props.kegList}
       currentPath ={props.currentPath}
-      onPourClick ={props.onPourClick}/>
+      onPourClick ={props.onPourClick}
+      onUpdateKeg = {props.onUpdateKeg}/>
     </div>
   );
 }

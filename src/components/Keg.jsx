@@ -1,7 +1,7 @@
 import React, {useEffect, useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Router } from 'react-router-dom';
-
+import EditKeg from './EditKeg'
 
 function Keg(props){
 
@@ -66,9 +66,19 @@ if (props.currentPath === '/admin') {
     <div>
       {kegInfo}
       <div style={actions}>
-        <Link to ='/editkeg'><h4 style={actionLinks}> Edit </h4></Link>
+        <h4 style={actionLinks}> Edit </h4>
         <h4 className='pourButton' onClick={()=> {props.onPourClick(props.id)}}style={actionLinks}> Pour </h4>
+
       </div>
+      <EditKeg
+        kegId = {props.id}
+        kegName = {props.name}
+        kegBrand = {props.brand}
+        kegCost = {props.cost}
+        kegAlcoholContent = {props.alcoholContent}
+        kegPintsLeft = {props.pintsLeft}
+
+        onUpdateKeg= {props.onUpdateKeg}/>
       <style jsx>{`
           .pourButton:hover{
             cursor: pointer;

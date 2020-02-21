@@ -13,7 +13,7 @@ function KegList(props){
     textAlign: "center",
     color: "black",
   }
-
+console.log(props);
 
   return (
     <div className='kegPage'>
@@ -29,6 +29,7 @@ function KegList(props){
             id={keg.id}
             onPourClick={props.onPourClick}
             currentPath={props.currentPath}
+            onUpdateKeg={props.onUpdateKeg}
             key={index}/>
         )}
       </div>

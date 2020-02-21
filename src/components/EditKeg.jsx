@@ -11,7 +11,7 @@ function EditKeg(props){
 
   function handleEditKegSubmit(event){
     event.preventDefault();
-    props.onKegCreation({name: _name.value, brand: _brand.value, cost: _cost.value, alcoholContent: _alcoholContent.value, pintsLeft: [124, 'green'], id: props.kegList.length})
+    props.onUpdateKeg({name: _name.value, brand: _brand.value, cost: _cost.value, alcoholContent: _alcoholContent.value, pintsLeft: [props.kegPintsLeft[0], props.kegPintsLeft[1]], id: props.kegId})
    _name = "";
    _brand = "";
    _cost = "";
@@ -33,21 +33,27 @@ function EditKeg(props){
     const label = {
       padding: '10px'
     }
+
+    const editKeg = {
+      float: 'right',
+      width: '400px',
+      marginTop: '-20%',
+    }
     return (
-      <div>
-        <h1 style={menu}> Edit Keg </h1>
+      <div style={editKeg}>
+        <h1 style={menu}> Edit {props.kegName} </h1>
         <form onSubmit={handleEditKegSubmit}style={form}>
           <label style={label}> Name:
-            <input type="text" name="name" id='name' ref={(input) => {_name = input;}}/>
+            <input type="text" name="name" id='name' defaultValue={props.kegName} ref={(input) => {_name = input;}}/>
           </label>
           <label style={label}> Brand:
-            <input type="text" name="brand" id='brand' ref={(input) => {_brand = input;}}/>
+            <input type="text" name="brand" id='brand' defaultValue={props.kegBrand} ref={(input) => {_brand = input;}}/>
           </label>
           <label style={label}> Cost:
-            <input type="number" name="cost" id='cost' ref={(input) => {_cost = input;}}/>
+            <input type="number" name="cost" id='cost' defaultValue={props.kegCost} ref={(input) => {_cost = input;}}/>
           </label>
           <label style={label}> Alcohol Percentage:
-            <input type="numder" name="alcoholContent" id='alcoholContent' ref={(input) => {_alcoholContent = input;}}/>
+            <input type="numder" name="alcoholContent" id='alcoholContent' defaultValue={props.kegAlcoholContent} ref={(input) => {_alcoholContent = input;}}/>
           </label>
           <input type="submit" value="Submit" />
         </form>
