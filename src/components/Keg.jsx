@@ -7,6 +7,25 @@ function Keg(props){
 
 
 
+let edit = null;
+const[editVisibility, setVisibility] = useState(null)
+
+function onEditClick(){
+  if (editVisibility === null){
+    setVisibility(<EditKeg
+      kegId = {props.id}
+      kegName = {props.name}
+      kegBrand = {props.brand}
+      kegCost = {props.cost}
+      kegAlcoholContent = {props.alcoholContent}
+      kegPintsLeft = {props.pintsLeft}
+      onUpdateKeg= {props.onUpdateKeg}/>
+
+    )
+  }else {
+    setVisibility(null)
+  }
+}
 
 
   const kegCard ={
@@ -66,19 +85,11 @@ if (props.currentPath === '/admin') {
     <div>
       {kegInfo}
       <div style={actions}>
-        <h4 style={actionLinks}> Edit </h4>
+        <h4  onClick={()=> onEditClick()}style={actionLinks}> Edit </h4>
         <h4 className='pourButton' onClick={()=> {props.onPourClick(props.id)}}style={actionLinks}> Pour </h4>
 
       </div>
-      <EditKeg
-        kegId = {props.id}
-        kegName = {props.name}
-        kegBrand = {props.brand}
-        kegCost = {props.cost}
-        kegAlcoholContent = {props.alcoholContent}
-        kegPintsLeft = {props.pintsLeft}
-
-        onUpdateKeg= {props.onUpdateKeg}/>
+      {editVisibility}
       <style jsx>{`
           .pourButton:hover{
             cursor: pointer;

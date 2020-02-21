@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
 import { Router } from 'react-router-dom';
 
@@ -9,6 +9,10 @@ function EditKeg(props){
   let _cost = null;
   let _alcoholContent = null;
 
+const[visibility, setVisibility] = useState('auto')
+
+
+
   function handleEditKegSubmit(event){
     event.preventDefault();
     props.onUpdateKeg({name: _name.value, brand: _brand.value, cost: _cost.value, alcoholContent: _alcoholContent.value, pintsLeft: [props.kegPintsLeft[0], props.kegPintsLeft[1]], id: props.kegId})
@@ -16,6 +20,7 @@ function EditKeg(props){
    _brand = "";
    _cost = "";
    _alcoholContent = "";
+   setVisibility('none')
   }
 
     const form = {
@@ -40,7 +45,7 @@ function EditKeg(props){
       marginTop: '-20%',
     }
     return (
-      <div style={editKeg}>
+      <div id="editDiv" className='beforeSubmit'style={editKeg}>
         <h1 style={menu}> Edit {props.kegName} </h1>
         <form onSubmit={handleEditKegSubmit}style={form}>
           <label style={label}> Name:
@@ -57,6 +62,13 @@ function EditKeg(props){
           </label>
           <input type="submit" value="Submit" />
         </form>
+        <style jsx>{`
+            .beforeSubmit{
+              display: ${visibility};
+            }
+          `}
+
+        </style>
       </div>
     );
   }
