@@ -27,7 +27,7 @@ function Keg(props){
     <div style={kegCard}>
       <h2>{props.name}</h2>
       <h3>{props.brand}</h3>
-      <h3>${props.price}</h3>
+      <h3>${props.cost}</h3>
       <h3>{props.alcoholContent}% Alcohol</h3>
       <h3>{props.pintsLeft} Pints Left</h3>
       <div style={actions}>

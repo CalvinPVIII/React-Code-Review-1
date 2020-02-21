@@ -14,8 +14,14 @@ class App extends React.Component {
     this.state = {
       masterKegList: []
     };
-
+    this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this)
   }
+
+handleAddingNewKegToList(keg){
+  let newKegList = this.state.masterKegList.slice();
+  newKegList.push(keg)
+  this.setState({masterKegList: newKegList})
+}
 
   render(){
 
@@ -23,8 +29,8 @@ class App extends React.Component {
     <div>
       <Header/>
       <Switch>
-        <Route exact path='/' component={KegList}/>
-        <Route path='/newkeg' component={NewKeg}/>
+        <Route exact path='/' render={()=> <KegList kegList={this.state.masterKegList}/>}/>
+        <Route path='/newkeg' render={()=><NewKeg onKegCreation={this.handleAddingNewKegToList} />}/>
         <Route path='/editkeg' component={EditKeg}/>
         <Route path='/signin' component={SignIn}/>
         <Route path='/signup' component={SignUp}/>
