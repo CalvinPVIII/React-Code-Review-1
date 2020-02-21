@@ -8,7 +8,17 @@ import EditKeg from './EditKeg';
 import SignIn from './SignIn';
 import SignUp from './SignUp';
 import Error from './Error'
-function App() {
+class App extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      masterKegList: []
+    };
+
+  }
+
+  render(){
+
   return (
     <div>
       <Header/>
@@ -22,6 +32,7 @@ function App() {
       </Switch>
     </div>
   );
+}
 }
 
 export default App;
