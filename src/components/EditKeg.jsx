@@ -9,7 +9,6 @@ function EditKeg(props){
   let _cost = null;
   let _alcoholContent = null;
 
-
   function handleEditKegSubmit(event){
     event.preventDefault();
     props.onKegCreation({name: _name.value, brand: _brand.value, cost: _cost.value, alcoholContent: _alcoholContent.value, pintsLeft: [124, 'green'], id: props.kegList.length})

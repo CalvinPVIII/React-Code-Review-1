@@ -6,7 +6,6 @@ import KegList from './KegList'
 import NewKeg from './NewKeg';
 import EditKeg from './EditKeg';
 import Admin from './Admin';
-import SignUp from './SignUp';
 import Error from './Error'
 import './App.css';
 
