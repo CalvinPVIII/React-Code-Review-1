@@ -85,13 +85,12 @@ if (props.currentPath === '/admin') {
     <div>
       {kegInfo}
       <div style={actions}>
-        <h4  onClick={()=> onEditClick()}style={actionLinks}> Edit </h4>
-        <h4 className='pourButton' onClick={()=> {props.onPourClick(props.id)}}style={actionLinks}> Pour </h4>
-
+        <h4 className='button' onClick={()=> onEditClick()}style={actionLinks}> Edit </h4>
+        <h4 className='button' onClick={()=> {props.onPourClick(props.id)}}style={actionLinks}> Pour </h4>
       </div>
       {editVisibility}
       <style jsx>{`
-          .pourButton:hover{
+          .button:hover{
             cursor: pointer;
           }
             `}

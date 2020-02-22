@@ -5,10 +5,12 @@ import KegList from './KegList'
 
 function Admin(props){
 
-
+const adminHeadStyle ={
+  textAlign: 'center'
+}
   return (
     <div>
-    <h1>Admin</h1>
+    <h1 style={adminHeadStyle}>Admin</h1>
       <KegList
       kegList ={props.kegList}
       currentPath ={props.currentPath}

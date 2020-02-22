@@ -13,9 +13,7 @@ class App extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      masterKegList: [
-        {name: 'beer', brand: 'some beer', cost: '1', alcoholContent: '2', pintsLeft: [65, 'green'], id: 0}
-      ]
+      masterKegList: []
     };
     this.handleAddingNewKegToList = this.handleAddingNewKegToList.bind(this)
     this.handleDecreasingPints = this.handleDecreasingPints.bind(this)
